@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ExchangeCurrencyScreen/static/css/main.54aa9e51.chunk.css",
+    "main.js": "/ExchangeCurrencyScreen/static/js/main.d0b69cfe.chunk.js",
+    "main.js.map": "/ExchangeCurrencyScreen/static/js/main.d0b69cfe.chunk.js.map",
+    "runtime-main.js": "/ExchangeCurrencyScreen/static/js/runtime-main.ca6a9c66.js",
+    "runtime-main.js.map": "/ExchangeCurrencyScreen/static/js/runtime-main.ca6a9c66.js.map",
+    "static/js/2.56c4769b.chunk.js": "/ExchangeCurrencyScreen/static/js/2.56c4769b.chunk.js",
+    "static/js/2.56c4769b.chunk.js.map": "/ExchangeCurrencyScreen/static/js/2.56c4769b.chunk.js.map",
+    "index.html": "/ExchangeCurrencyScreen/index.html",
+    "static/css/main.54aa9e51.chunk.css.map": "/ExchangeCurrencyScreen/static/css/main.54aa9e51.chunk.css.map",
+    "static/js/2.56c4769b.chunk.js.LICENSE.txt": "/ExchangeCurrencyScreen/static/js/2.56c4769b.chunk.js.LICENSE.txt",
+    "static/media/_variables.scss": "/ExchangeCurrencyScreen/static/media/BasierCircle-Regular.53a96fa7.woff2",
+    "static/media/currency-placeholder.08fefa87.png": "/ExchangeCurrencyScreen/static/media/currency-placeholder.08fefa87.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ca6a9c66.js",
+    "static/js/2.56c4769b.chunk.js",
+    "static/css/main.54aa9e51.chunk.css",
+    "static/js/main.d0b69cfe.chunk.js"
+  ]
+}
