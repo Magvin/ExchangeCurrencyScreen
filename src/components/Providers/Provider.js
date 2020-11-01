@@ -107,16 +107,18 @@ const exchange = (state, payload) => {
     pockets: newPockets,
     firstSelectedPocket: {
       name: state.firstSelectedPocket.name,
-      value:
+      value: (
         parseFloat(state.firstSelectedPocket.value) -
-        parseFloat(payload.firstSelectedPocket.value),
+        parseFloat(payload.firstSelectedPocket.value)
+      ).toFixed(2),
       selected: false,
     },
     secondSelectedPocket: {
       name: state.secondSelectedPocket.name,
-      value:
+      value: (
         parseFloat(state.secondSelectedPocket.value) +
-        parseFloat(payload.secondSelectedPocket.value),
+        parseFloat(payload.secondSelectedPocket.value)
+      ).toFixed(2),
       selected: false,
     },
   };

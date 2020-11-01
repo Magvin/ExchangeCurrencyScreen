@@ -22,7 +22,10 @@ const PhoneScreen = ({ children }) => {
     globalState.firstSelectedPocket.value < globalState.firstInput ||
     !globalState.firstInput.length ||
     globalState.firstInput === "0";
-
+  const isValidBottom =
+    globalState.secondInput < globalState.firstSelectedPocket.value &&
+    globalState.secondInput.length &&
+    globalState.secondInput !== "0";
   return (
     <Wrapper data-testid="phone-screen">
       {children}
@@ -30,9 +33,9 @@ const PhoneScreen = ({ children }) => {
         !globalState.toggleOtherCurrencies && (
           <Button
             data-testid="phone-screen-exchange-button"
-            disabled={isNotValid}
+            disabled={isNotValid && !isValidBottom}
             style={
-              isNotValid
+              isNotValid && !isValidBottom
                 ? {
                     filter: "brightness(0.5)",
                   }
