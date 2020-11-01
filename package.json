@@ -2,6 +2,7 @@
   "name": "revolut-currency-exchanger",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://magvin.github.io/ExchangeCurrencyScreen",
   "dependencies": {
     "@revolut/ui-kit": "^10.1.6",
     "@testing-library/jest-dom": "^5.11.5",
@@ -19,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test  --watchAll=false  --coverage ",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -66,6 +69,7 @@
     ]
   },
   "devDependencies": {
-    "fetch-mock": "^9.10.7"
+    "fetch-mock": "^9.10.7",
+    "gh-pages": "^3.1.0"
   }
 }
