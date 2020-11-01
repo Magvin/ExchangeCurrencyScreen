@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useReducer } from "react";
+import {
+  PhoneScreen,
+  ExchangeScreen,
+  OtherSelectionBox,
+  SelectedBox,
+} from "./components";
+import {
+  CurrencyContext,
+  InitialState,
+  reducers,
+} from "./components/Providers/Provider";
+import TopBar from "./components/TopBar/TopBar";
+
+import "./App.css";
+import "./styles/_variables.scss";
 
 function App() {
+  const [globalState, dispatch] = useReducer(reducers, InitialState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CurrencyContext.Provider value={{ globalState, dispatch }}>
+      <PhoneScreen>
+        <TopBar />
+        <ExchangeScreen />
+        <SelectedBox />
+        {globalState.toggleOtherCurrencies && <OtherSelectionBox />}
+      </PhoneScreen>
+    </CurrencyContext.Provider>
   );
 }
 

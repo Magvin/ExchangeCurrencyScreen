@@ -3,19 +3,49 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@revolut/ui-kit": "^10.1.6",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
+    "react-currency-flags": "^0.1.2",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "styled-components": "^5.2.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test  --watchAll=false  --coverage ",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!/node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "text",
+      [
+        "lcov",
+        {
+          "projectRoot": "../../"
+        }
+      ]
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +64,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "fetch-mock": "^9.10.7"
   }
 }
