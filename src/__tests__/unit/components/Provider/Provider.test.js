@@ -58,7 +58,7 @@ describe("Provider", () => {
         value: "0.00",
       },
     };
-    expect(reducers(GlobalState, action)).toMatchObject({
+    expect(reducers(InitialState, action)).toMatchObject({
       secondSelectedPocket: {
         name: "AFD",
         value: "0.00",
