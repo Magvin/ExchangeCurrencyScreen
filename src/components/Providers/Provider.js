@@ -92,12 +92,15 @@ const exchange = (state, payload) => {
         fullName: pockets[index].fullName,
       };
       newPockets = pockets;
-    } else if (pockets[index].name === state.firstSelectedPocket.name) {
+    } else if (
+      pockets[index].name === state.firstSelectedPocket.name ||
+      pockets[index].name === state.secondSelectedPocket.name
+    ) {
       newPockets = [
         ...pockets,
         {
           name: payload.secondSelectedPocket.name,
-          value: payload.secondSelectedPocket.value,
+          value: parseFloat(payload.secondSelectedPocket.value).toFixed(2),
         },
       ];
     }
@@ -142,7 +145,7 @@ const setFirstCurrency = (state, payload) => {
     ...state,
     firstSelectedPocket: {
       name: payload.name,
-      value: payload.value,
+      value: parseFloat(payload.value).toFixed(2),
       selected: false,
     },
   };
@@ -152,7 +155,7 @@ const setSecondCurrency = (state, payload) => {
     ...state,
     secondSelectedPocket: {
       name: payload.name,
-      value: payload.value,
+      value: parseFloat(payload.value).toFixed(2),
       selected: false,
     },
   };

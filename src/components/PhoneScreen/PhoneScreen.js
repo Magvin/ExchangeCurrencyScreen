@@ -19,13 +19,17 @@ const Button = styled.button`
 const PhoneScreen = ({ children }) => {
   const { globalState, dispatch } = useContext(CurrencyContext);
   const isNotValid =
-    globalState.firstSelectedPocket.value < globalState.firstInput ||
+    parseFloat(globalState.firstSelectedPocket.value) <
+      parseFloat(globalState.firstInput) ||
     !globalState.firstInput.length ||
     globalState.firstInput === "0";
   const isValidBottom =
-    globalState.secondInput < globalState.firstSelectedPocket.value &&
+    parseFloat(globalState.secondInput / globalState.activeRate) <
+      parseFloat(globalState.firstSelectedPocket.value) &&
     globalState.secondInput.length &&
     globalState.secondInput !== "0";
+  console.log(isValidBottom, isNotValid);
+  console.log(globalState);
   return (
     <Wrapper data-testid="phone-screen">
       {children}
